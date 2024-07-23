@@ -23,9 +23,9 @@ def new():
         pass
     names = ['areolate grouper', 'big eye', 'blackhead sea bream', 'fourfinger threadfin', 'golden threadfin bream', 'grey mullet', 'grouper', 'headgrunt', 'leopard coral trout', 'moontail grouper', 'pampano', 'panther grouper', 'plectropomusmaculatus', 'pomfret', 'queensland grouper', 'red emperor', 'red grouper', 'redtilpma', 'rogaa', 'sabah giant grouper', 'sardin', 'sebae', 'silver grunt', 'squaretail coral grouper', 'tuna', 'yellow fin seabream']    
     nameszh = ['芝麻斑', '大眼鯽', '黑鱲', '馬友', '紅衫魚', '烏頭', '石斑', '頭鱸', '東星斑', '燕尾斑', '黃立倉', '老鼠斑', '泰星斑', '倉魚', '花尾龍躉', '紅魚', '紅瓜子斑', '珍珠鱲', '黑瓜子斑', '沙巴龍躉', '沙甸魚', '三刀魚', '銀鯽魚', '西星斑', '吞拿魚', '黃脚鱲']
-    os.system("libcamera-still -o fish.jpg")
+    os.system("libcamera-still -o fish.jpg --qt-preview")
     os.system("yolo detect predict model=/home/paco/Desktop/fishai/detect/best.pt source=fish.jpg save_txt=True")
-    #os.remove("fish.jpg")
+    os.remove("fish.jpg")
     try:
         txt = open('runs/detect/predict/labels/fish.txt', 'r')
     except:                                 
